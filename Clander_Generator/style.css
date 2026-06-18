@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0f172a;
+    overflow: hidden;
+}
+
+.background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at top left, #3b82f6, transparent 40%),
+        radial-gradient(circle at bottom right, #8b5cf6, transparent 40%);
+    animation: moveBg 10s infinite alternate ease-in-out;
+}
+
+@keyframes moveBg {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
+}
+
+.container {
+    width: 95%;
+    max-width: 900px;
+    position: relative;
+    z-index: 10;
+}
+
+.header {
+    text-align: center;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+}
+
+.header p {
+    opacity: .8;
+}
+
+.controls {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.controls select,
+.controls input {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    min-width: 150px;
+    font-size: 15px;
+}
+
+.controls button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.controls button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, .4);
+}
+
+.calendar-card {
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 24px;
+    padding: 25px;
+    color: white;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .25);
+}
+
+.calendar-title {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.weekdays,
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.weekdays div {
+    text-align: center;
+    font-weight: 600;
+    padding: 12px;
+    color: #cbd5e1;
+}
+
+.days div {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, .06);
+    transition: .3s;
+    animation: fadeUp .4s ease forwards;
+}
+
+.days div:hover {
+    transform: translateY(-4px);
+    background: rgba(59, 130, 246, .3);
+}
+
+.today {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6) !important;
+    font-weight: bold;
+    box-shadow: 0 0 20px rgba(139, 92, 246, .6);
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media(max-width:700px) {
+
+    .days div {
+        min-height: 50px;
+        font-size: 14px;
+    }
+
+    .header h1 {
+        font-size: 1.7rem;
+    }
+}
+
+.age-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 20px;
+    color: white;
+    min-width: 280px;
+    margin-left: 100px;
+}
+
+.age-card input {
+    width: 100%;
+    padding: 12px;
+    margin: 15px 0;
+    border: none;
+    border-radius: 10px;
+}
+
+.age-card button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #3b82f6;
+    color: white;
+    cursor: pointer;
+}
+
+#ageResult {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+}

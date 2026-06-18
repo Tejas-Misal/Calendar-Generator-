@@ -1,0 +1,82 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Calendar or age calculator Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background"></div>
+
+    <div class="container">
+
+        <div class="header">
+            <h1>Calendar</h1>
+        </div>
+
+        <div class="controls">
+            <select id="month">
+                <option value="0">January</option>
+                <option value="1">February</option>
+                <option value="2">March</option>
+                <option value="3">April</option>
+                <option value="4">May</option>
+                <option value="5">June</option>
+                <option value="6">July</option>
+                <option value="7">August</option>
+                <option value="8">September</option>
+                <option value="9">October</option>
+                <option value="10">November</option>
+                <option value="11">December</option>
+            </select>
+
+            <input type="number" id="year" placeholder="Enter Year">
+
+            <button onclick="generateCalendar()">
+                Generate Calendar
+            </button>
+        </div>
+
+        <div class="calendar-card">
+
+            <div id="calendarTitle" class="calendar-title"></div>
+
+            <div class="weekdays">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+
+            <div id="calendarDays" class="days"></div>
+
+        </div>
+
+    </div>
+    <div class="age-card">
+
+        <h2>Age Calculator</h2>
+
+        <input type="number" id="birthYear" placeholder="Enter Birth Year">
+
+        <button onclick="calculateAge()">
+            Calculate Age
+        </button>
+
+        <div id="ageResult"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+```
